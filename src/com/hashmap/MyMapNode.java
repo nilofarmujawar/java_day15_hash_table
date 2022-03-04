@@ -1,18 +1,16 @@
 package com.hashmap;
 
-/**
- * create class class name as MyMapNode.
- *
+/*
+ * create a class name as MyMapNode key and value pair
  */
-public class MyMapNode <K,V>{
-
+public class MyMapNode <K, V> {
     K key;
     V value;
     MyMapNode<K, V> next;
 
     /**
-     *  cretae constructor name as MyMaoNode and passing key and value
-     *  here
+     * create parameterised constructor
+     * they initialinze key ,value and ,next is null
      * @param key
      * @param value
      */
@@ -21,30 +19,36 @@ public class MyMapNode <K,V>{
         this.value = value;
         next = null;
     }
-      /**
-       * here we use getter and setter
-       * 1st get key and set key
-       * getkey is return key setkey is set the key
-       */
+
+    /**
+     * getter and setter used
+     *
+     * @return key
+     */
     public K getKey() {
         return key;
     }
 
+    /**
+     * setKey is passing the parameter like key
+     * they set the key
+     */
     public void setKey(K key) {
         this.key = key;
-
     }
 
     /**
-     * here we used getvalue method and setvalue
-     * set is set the value
-     * and get value is return value
-     * @return return is value
+     * here we create getValue method
+     * @return value
      */
     public V getValue() {
         return value;
     }
 
+    /**
+     * method create name as setValue
+     * @param value
+     */
     public void setValue(V value) {
         this.value = value;
     }
@@ -54,16 +58,15 @@ public class MyMapNode <K,V>{
     }
 
     public void setNext(MyMapNode<K, V> next) {
-        this.next = (MyMapNode<K, V>) next;
+        this.next = next;
     }
 
     @Override
     public String toString() {
         StringBuilder nodeString = new StringBuilder();
-        nodeString.append("MyMapNode{" + " Key= ").append(key).append(" Value= ").append(value).append('}');
-        if (next != null)
+        nodeString.append("Node{" + "Key=").append(key).append(" Value=").append(value).append("}");
+        if(next != null)
             nodeString.append("->").append(next);
         return nodeString.toString();
     }
 }
-

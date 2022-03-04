@@ -1,21 +1,30 @@
 package com.hashmap;  // package name
 
-/** Ability to find frequency of words in a sentence like “To be or not to be”
- * - Use LinkedList to do the Hash Table Operation
- * - To do this we create MyMapNode with Key Value Pair and create LinkedList of MyMapNode
- *
+/** Remove avoidable word from the phrase “Paranoids are not paranoid because they are paranoid but
+ * because they keep putting themselves deliberately into paranoid avoidable situations”
+ * - Use LinkedList to do the Hash Table Operation like here the removal of word avoidable
+ * - To do this create MyMapNode with Key Value Pair and create LinkedList of MyMapNode
+ */
+
+/**
+ * main class in this program
  */
 public class HashTableMain {
 
+    /**
+     *
+     * main method all code execute in main method
+     */
     public static void main(String[] args) {
 
         MyHashTable<String, Integer> hashTable = new MyHashTable();
-        String sentence = "To be or not to be";
+        String sentence = "Paranoids are not paranoid because they are paranoid but " +
+                "because they keep putting themselves deliberately into paranoid avoidable situations";
 
-	        /**
-             *  Storing given sentence in an array.
-             * Converting the sentence to lower case and removing spaces.
-	         */
+        /**
+         *  Storing given sentence in an array.
+         * Converting the sentence to lower case and removing spaces.
+         */
 
         String[] sentenceArray = sentence.toLowerCase().split(" ");
 
@@ -39,7 +48,19 @@ public class HashTableMain {
 
                 value = value + 1;
             hashTable.add(word , value);
+            System.out.println("Value = "+value);
         }
+        System.out.println(hashTable);
+
+        /*
+         * Remove "avoidable" from the hashtable
+         */
+
+        hashTable.remove("avoidable");
+
+        /*
+         * Display the hashtable
+         */
         System.out.println(hashTable);
     }
 }
